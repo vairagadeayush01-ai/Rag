@@ -17,6 +17,7 @@ from hr_assistant.vector_store import (
 )
 from hr_assistant.logger import get_logger
 
+from hr_assistant.tracing import check_langsmith_tracing
 logger = get_logger(__name__)
 
 def build_vector_store_for_documents(file_path : str=config.DATA_FILE_PATH):
@@ -55,6 +56,7 @@ def build_hr_assistant(file_path : str=config.DATA_FILE_PATH):
         agent: The built HR assistant agent.
     """
     logger.info("Building HR assistant")
+    check_langsmith_tracing()
     vector_store = build_vector_store_for_documents(file_path)
     retriever = get_retriever(vector_store)
     llm = get_llm()

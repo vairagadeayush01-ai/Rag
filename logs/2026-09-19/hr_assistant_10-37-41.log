@@ -1,0 +1,31 @@
+2026-09-19 10:37:44,611 [INFO] hr_assistant.__main__: Rendering Streamlit application
+2026-09-19 10:38:22,205 [INFO] hr_assistant.__main__: Rendering Streamlit application
+2026-09-19 10:38:22,214 [INFO] hr_assistant.__main__: Loading cached HR assistant
+2026-09-19 10:38:22,215 [INFO] hr_assistant.hr_assistant.config: Checking required API keys
+2026-09-19 10:38:22,215 [INFO] hr_assistant.hr_assistant.config: Required API keys are available
+2026-09-19 10:38:22,216 [INFO] hr_assistant.hr_assistant.pipeline: Building HR assistant
+2026-09-19 10:38:22,217 [INFO] hr_assistant.hr_assistant.tracing: Langsmith tracing is enabled.
+2026-09-19 10:38:22,217 [INFO] hr_assistant.hr_assistant.tracing: Langsmith endpoint: https://api.smith.langchain.com
+2026-09-19 10:38:22,218 [INFO] hr_assistant.hr_assistant.tracing: Langsmith project: hr_policy_assitance
+2026-09-19 10:38:22,219 [INFO] hr_assistant.hr_assistant.pipeline: Preparing vector store for document: data\hr_policy.txt
+2026-09-19 10:38:22,219 [INFO] hr_assistant.hr_assistant.vector_store: Vector store path data\faiss_index exists: True
+2026-09-19 10:38:22,220 [INFO] hr_assistant.hr_assistant.pipeline: Loading existing vector store
+2026-09-19 10:38:22,220 [INFO] hr_assistant.hr_assistant.vector_store: Loading vector store from data\faiss_index
+2026-09-19 10:38:22,220 [INFO] hr_assistant.hr_assistant.embeddings: Initializing embeddings model: jina-embeddings-v2-base-en
+2026-09-19 10:38:22,221 [INFO] hr_assistant.hr_assistant.embeddings: Embeddings model initialized
+2026-09-19 10:38:22,289 [INFO] hr_assistant.hr_assistant.vector_store: Vector store loaded successfully
+2026-09-19 10:38:22,290 [INFO] hr_assistant.hr_assistant.vector_store: Creating retriever with top_k=3
+2026-09-19 10:38:22,290 [INFO] hr_assistant.hr_assistant.vector_store: Retriever created successfully
+2026-09-19 10:38:22,291 [INFO] hr_assistant.hr_assistant.llm: Initializing LLM: openai/gpt-oss-120b
+2026-09-19 10:38:22,666 [INFO] hr_assistant.hr_assistant.llm: LLM initialized successfully
+2026-09-19 10:38:22,670 [INFO] hr_assistant.hr_assistant.agent: Creating HR agent with 1 tools
+2026-09-19 10:38:22,684 [INFO] hr_assistant.hr_assistant.agent: HR agent created successfully
+2026-09-19 10:38:22,685 [INFO] hr_assistant.hr_assistant.pipeline: HR assistant built successfully
+2026-09-19 10:38:22,685 [INFO] hr_assistant.__main__: Cached HR assistant loaded
+2026-09-19 10:38:22,686 [INFO] hr_assistant.hr_assistant.pipeline: Processing user question: tell me about holliday policy
+2026-09-19 10:38:23,767 [INFO] hr_assistant.hr_assistant.tools: Searching HR policy for question: holiday policy
+2026-09-19 10:38:29,232 [INFO] hr_assistant.hr_assistant.tools: Retrieved 3 matching chunks
+2026-09-19 10:38:31,006 [INFO] hr_assistant.hr_assistant.pipeline: User question answered successfully
+2026-09-19 10:41:06,830 [INFO] hr_assistant.__main__: Rendering Streamlit application
+2026-09-19 10:41:06,841 [INFO] hr_assistant.hr_assistant.pipeline: Processing user question: how to make good cofee for hr
+2026-09-19 10:41:07,755 [INFO] hr_assistant.hr_assistant.pipeline: User question answered successfully

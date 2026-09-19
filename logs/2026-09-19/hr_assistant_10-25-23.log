@@ -1,0 +1,31 @@
+2026-09-19 10:25:26,263 [INFO] hr_assistant.__main__: Rendering Streamlit application
+2026-09-19 10:25:41,787 [INFO] hr_assistant.__main__: Rendering Streamlit application
+2026-09-19 10:25:41,796 [INFO] hr_assistant.__main__: Loading cached HR assistant
+2026-09-19 10:25:41,797 [INFO] hr_assistant.hr_assistant.config: Checking required API keys
+2026-09-19 10:25:41,798 [INFO] hr_assistant.hr_assistant.config: Required API keys are available
+2026-09-19 10:25:41,799 [INFO] hr_assistant.hr_assistant.pipeline: Building HR assistant
+2026-09-19 10:25:41,799 [INFO] hr_assistant.hr_assistant.pipeline: Preparing vector store for document: data\hr_policy.txt
+2026-09-19 10:25:41,800 [INFO] hr_assistant.hr_assistant.vector_store: Vector store path data\faiss_index exists: True
+2026-09-19 10:25:41,801 [INFO] hr_assistant.hr_assistant.pipeline: Loading existing vector store
+2026-09-19 10:25:41,802 [INFO] hr_assistant.hr_assistant.vector_store: Loading vector store from data\faiss_index
+2026-09-19 10:25:41,802 [INFO] hr_assistant.hr_assistant.embeddings: Initializing embeddings model: jina-embeddings-v2-base-en
+2026-09-19 10:25:41,803 [INFO] hr_assistant.hr_assistant.embeddings: Embeddings model initialized
+2026-09-19 10:25:41,869 [INFO] hr_assistant.hr_assistant.vector_store: Vector store loaded successfully
+2026-09-19 10:25:41,870 [INFO] hr_assistant.hr_assistant.vector_store: Creating retriever with top_k=3
+2026-09-19 10:25:41,871 [INFO] hr_assistant.hr_assistant.vector_store: Retriever created successfully
+2026-09-19 10:25:41,871 [INFO] hr_assistant.hr_assistant.llm: Initializing LLM: openai/gpt-oss-120b
+2026-09-19 10:25:42,248 [INFO] hr_assistant.hr_assistant.llm: LLM initialized successfully
+2026-09-19 10:25:42,253 [INFO] hr_assistant.hr_assistant.agent: Creating HR agent with 1 tools
+2026-09-19 10:25:42,266 [INFO] hr_assistant.hr_assistant.agent: HR agent created successfully
+2026-09-19 10:25:42,266 [INFO] hr_assistant.hr_assistant.pipeline: HR assistant built successfully
+2026-09-19 10:25:42,267 [INFO] hr_assistant.__main__: Cached HR assistant loaded
+2026-09-19 10:25:42,268 [INFO] hr_assistant.hr_assistant.pipeline: Processing user question: hii
+2026-09-19 10:25:43,342 [INFO] hr_assistant.hr_assistant.pipeline: User question answered successfully
+2026-09-19 10:26:29,839 [INFO] hr_assistant.__main__: Rendering Streamlit application
+2026-09-19 10:26:29,849 [INFO] hr_assistant.hr_assistant.pipeline: Processing user question: about  salary
+2026-09-19 10:26:31,136 [INFO] hr_assistant.hr_assistant.tools: Searching HR policy for question: salary
+2026-09-19 10:26:38,145 [INFO] hr_assistant.hr_assistant.tools: Retrieved 3 matching chunks
+2026-09-19 10:26:38,870 [INFO] hr_assistant.hr_assistant.pipeline: User question answered successfully
+2026-09-19 10:37:11,799 [INFO] hr_assistant.__main__: Rendering Streamlit application
+2026-09-19 10:37:11,811 [INFO] hr_assistant.hr_assistant.pipeline: Processing user question: hii
+2026-09-19 10:37:12,737 [INFO] hr_assistant.hr_assistant.pipeline: User question answered successfully
