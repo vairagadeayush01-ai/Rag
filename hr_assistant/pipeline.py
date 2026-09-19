@@ -15,6 +15,9 @@ from hr_assistant.vector_store import (
     save_vector_store,
     vector_store_exists,
 )
+from hr_assistant.logger import get_logger
+
+logger = get_logger(__name__)
 
 def build_vector_store_for_documents(file_path : str=config.DATA_FILE_PATH):
     """
@@ -27,16 +30,17 @@ def build_vector_store_for_documents(file_path : str=config.DATA_FILE_PATH):
     Returns:
         vector_store: The built vector store.
     """
+    logger.info("Preparing vector store for document: %s", file_path)
     if vector_store_exists(config.VECTOR_STORE_PATH):
-        print("Loading existing vector store...")
+        logger.info("Loading existing vector store")
         vector_store = load_vector_store(config.VECTOR_STORE_PATH)
     else:
-        print("Building new vector store...")
+        logger.info("Building new vector store")
         documents = load_document(file_path)
         chunks = split_into_chunks(documents)
         vector_store = build_vector_store(chunks)
         save_vector_store(vector_store, config.VECTOR_STORE_PATH)
-        print("vector store built and saved to disk.")
+        logger.info("New vector store built and saved")
 
     return vector_store
 
@@ -50,11 +54,13 @@ def build_hr_assistant(file_path : str=config.DATA_FILE_PATH):
     Returns:
         agent: The built HR assistant agent.
     """
+    logger.info("Building HR assistant")
     vector_store = build_vector_store_for_documents(file_path)
     retriever = get_retriever(vector_store)
     llm = get_llm()
     search_tool = create_search_tool(retriever)
     agent = create_hr_agent(llm, [search_tool])
+    logger.info("HR assistant built successfully")
     return agent
 
 def ask(agent,question : str)-> str:
@@ -68,5 +74,12 @@ def ask(agent,question : str)-> str:
     Returns:
         str: The answer from the agent.
     """
-    response=agent.invoke({"messages":[{"role":"user","content":question}]})
-    return response["messages"][-1].content
+    logger.info("Processing user question: %s", question)
+    try:
+        response = agent.invoke({"messages": [{"role": "user", "content": question}]})
+    except Exception:
+        logger.exception("Failed to process user question")
+        raise
+    answer = response["messages"][-1].content
+    logger.info("User question answered successfully")
+    return answer

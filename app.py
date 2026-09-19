@@ -3,7 +3,10 @@
 import streamlit as st
 
 from hr_assistant import config
+from hr_assistant.logger import get_logger
 from hr_assistant.pipeline import ask, build_hr_assistant
+
+logger = get_logger(__name__)
 
 
 st.set_page_config(
@@ -15,17 +18,22 @@ st.set_page_config(
 @st.cache_resource
 def load_assistant():
     """Build and cache the HR assistant instance."""
+    logger.info("Loading cached HR assistant")
     config.check_api_keys()
-    return build_hr_assistant(config.DATA_FILE_PATH)
+    assistant = build_hr_assistant(config.DATA_FILE_PATH)
+    logger.info("Cached HR assistant loaded")
+    return assistant
 
 
 def reset_chat() -> None:
     """Clear the current chat history."""
+    logger.info("Chat history cleared")
     st.session_state.messages = []
 
 
 def main() -> None:
     """Render the Streamlit app."""
+    logger.info("Rendering Streamlit application")
     st.title("HR Policy Assistant")
     st.caption("Ask questions about your HR policies and get answers from the policy document.")
 
@@ -60,6 +68,7 @@ def main() -> None:
                 assistant = load_assistant()
                 response = ask(assistant, prompt)
             except Exception as exc:
+                logger.exception("Failed to answer Streamlit question")
                 response = (
                     "I couldn't complete that request right now.\n\n"
                     f"Error: `{exc}`"

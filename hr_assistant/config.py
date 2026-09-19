@@ -1,5 +1,8 @@
 import os
 from dotenv import load_dotenv
+from hr_assistant.logger import get_logger
+
+logger = get_logger(__name__)
 
 load_dotenv()
 
@@ -34,7 +37,11 @@ Your task is to provide accurate and concise answers to employee queries based o
 HR policies. If the information is not available, politely inform the employee that you do not have the answer."""
 
 def check_api_keys()-> None:
+    logger.info("Checking required API keys")
     if not GROQ_API_KEY:
+        logger.error("GROQ_API_KEY is not set")
         raise ValueError("GROQ_API_KEY is not set. Please set it in your environment variables.")
     if not JINA_API_KEY:
+        logger.error("JINA_API_KEY is not set")
         raise ValueError("JINA_API_KEY is not set. Please set it in your environment variables.")
+    logger.info("Required API keys are available")

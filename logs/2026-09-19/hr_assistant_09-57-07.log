@@ -1,0 +1,23 @@
+2026-09-19 09:57:11,358 [INFO] hr_assistant.__main__: Rendering Streamlit application
+2026-09-19 09:57:24,620 [INFO] hr_assistant.__main__: Rendering Streamlit application
+2026-09-19 09:57:24,631 [INFO] hr_assistant.__main__: Loading cached HR assistant
+2026-09-19 09:57:24,632 [INFO] hr_assistant.hr_assistant.config: Checking required API keys
+2026-09-19 09:57:24,633 [INFO] hr_assistant.hr_assistant.config: Required API keys are available
+2026-09-19 09:57:24,634 [INFO] hr_assistant.hr_assistant.pipeline: Building HR assistant
+2026-09-19 09:57:24,635 [INFO] hr_assistant.hr_assistant.pipeline: Preparing vector store for document: data\hr_policy.txt
+2026-09-19 09:57:24,637 [INFO] hr_assistant.hr_assistant.vector_store: Vector store path data\faiss_index exists: True
+2026-09-19 09:57:24,638 [INFO] hr_assistant.hr_assistant.pipeline: Loading existing vector store
+2026-09-19 09:57:24,638 [INFO] hr_assistant.hr_assistant.vector_store: Loading vector store from data\faiss_index
+2026-09-19 09:57:24,639 [INFO] hr_assistant.hr_assistant.embeddings: Initializing embeddings model: jina-embeddings-v2-base-en
+2026-09-19 09:57:24,640 [INFO] hr_assistant.hr_assistant.embeddings: Embeddings model initialized
+2026-09-19 09:57:24,734 [INFO] hr_assistant.hr_assistant.vector_store: Vector store loaded successfully
+2026-09-19 09:57:24,734 [INFO] hr_assistant.hr_assistant.vector_store: Creating retriever with top_k=3
+2026-09-19 09:57:24,735 [INFO] hr_assistant.hr_assistant.vector_store: Retriever created successfully
+2026-09-19 09:57:24,736 [INFO] hr_assistant.hr_assistant.llm: Initializing LLM: openai/gpt-oss-120b
+2026-09-19 09:57:25,267 [INFO] hr_assistant.hr_assistant.llm: LLM initialized successfully
+2026-09-19 09:57:25,274 [INFO] hr_assistant.hr_assistant.agent: Creating HR agent with 1 tools
+2026-09-19 09:57:25,292 [INFO] hr_assistant.hr_assistant.agent: HR agent created successfully
+2026-09-19 09:57:25,292 [INFO] hr_assistant.hr_assistant.pipeline: HR assistant built successfully
+2026-09-19 09:57:25,293 [INFO] hr_assistant.__main__: Cached HR assistant loaded
+2026-09-19 09:57:25,295 [INFO] hr_assistant.hr_assistant.pipeline: Processing user question: how can you help me
+2026-09-19 09:57:26,487 [INFO] hr_assistant.hr_assistant.pipeline: User question answered successfully

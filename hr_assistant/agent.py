@@ -2,6 +2,9 @@
 
 from langchain.agents import create_agent
 from hr_assistant import config
+from hr_assistant.logger import get_logger
+
+logger = get_logger(__name__)
 
 def create_hr_agent(llm,tools):
     """
@@ -13,10 +16,12 @@ def create_hr_agent(llm,tools):
     Returns:
         An HR agent capable of answering questions about the HR policy. 
     """
+    logger.info("Creating HR agent with %d tools", len(tools))
     agent = create_agent(
         model=llm,
         tools=tools,
         system_prompt=config.SYSTEM_PROMPT,
         debug=True,
     )
+    logger.info("HR agent created successfully")
     return agent
